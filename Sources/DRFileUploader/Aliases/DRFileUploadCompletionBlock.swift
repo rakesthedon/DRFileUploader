@@ -7,4 +7,4 @@
 
 import Foundation
 
-public typealias DRFileUploadCompletionBlock = (URL) -> Void
+public typealias DRFileUploadCompletionBlock = (URL?, Error?) -> Void

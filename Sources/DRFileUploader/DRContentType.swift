@@ -29,7 +29,7 @@ public enum DRContentType {
     case epub
     case gz
     case gif
-    case htm_html
+    case html
     case ico
     case ics
     case jar
@@ -110,7 +110,7 @@ public extension DRContentType {
         case .epub: "application/epub+zip"
         case .gz: "application/gzip"
         case .gif: "image/gif"
-        case .htm_html: "text/html"
+        case .html: "text/html"
         case .ico: "image/vnd.microsoft.icon"
         case .ics: "text/calendar"
         case .jar: "application/java-archive"

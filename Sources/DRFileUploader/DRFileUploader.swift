@@ -12,14 +12,14 @@ public protocol DRFileUploader {
     typealias UploadTaskReference = UUID
 
     @discardableResult
-    func uploadFile(at url: URL, filename: String, contentType: DRContentType?, progressionBlock: DRFileUploadProgressionBlock?, completionBlock: DRFileUploadCompletionBlock?) -> UploadTaskReference
+    func uploadFile(at url: URL, filename: String, contentType: DRContentType, progressionBlock: DRFileUploadProgressionBlock?, completionBlock: DRFileUploadCompletionBlock?) throws -> UploadTaskReference
     @discardableResult
-    func upload(data: Data, filename: String, contentType: DRContentType?, progressionBlock: DRFileUploadProgressionBlock?, completionBlock: DRFileUploadCompletionBlock?) -> UploadTaskReference
+    func upload(data: Data, filename: String, contentType: DRContentType, progressionBlock: DRFileUploadProgressionBlock?, completionBlock: DRFileUploadCompletionBlock?) throws -> UploadTaskReference
 
     @discardableResult
-    func uploadFile(at url: URL, filename: String, contentType: DRContentType?, progressionBlock: DRFileUploadProgressionBlock) async -> URL
+    func uploadFile(at url: URL, filename: String, contentType: DRContentType, progressionBlock: DRFileUploadProgressionBlock?) async throws -> URL
     @discardableResult
-    func upload(data: Data, filename: String, contentType: DRContentType?, progressionBlock: DRFileUploadProgressionBlock?) async -> URL
+    func upload(data: Data, filename: String, contentType: DRContentType, progressionBlock: DRFileUploadProgressionBlock?) async throws -> URL
 
     func cancelTask(reference: UploadTaskReference)
 }
